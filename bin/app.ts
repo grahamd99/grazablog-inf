@@ -9,10 +9,9 @@ const app = new cdk.App();
  */
 // Read from .env
 const tagUser = process.env.CDK_TAG_USER ?? "UNKNOWN";
-const bucketName = `${props.tagUser}-PrivateS3CloudFrontWebsiteStack`.toLowerCase();
 
 // Apply tag
-cdk.Tags.of(app).add("user", tagUser);
+cdk.Tags.of(app).add("User", tagUser);
 
 new WebsiteStack(app, "PrivateS3CloudFrontWebsiteStack", {
   env: {
